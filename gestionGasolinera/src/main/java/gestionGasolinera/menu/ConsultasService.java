@@ -1,6 +1,7 @@
 package gestionGasolinera.menu;
 
 import java.util.Calendar;
+import java.util.List;
 
 import gestionGasolinera.dal.RepostajeGasolinera;
 
@@ -16,5 +17,12 @@ public interface ConsultasService {
 	 * @return true si la inserción en base de datos ha sido correcta, false en caso contrario
 	 */
 	boolean insertarRepostajeNormal (RepostajeGasolinera repostajeGasolinera);
+	
+	/**
+	 * listarRepostajeNormalLitros: lista los repostajes con mayor importe al indicado por el usuario
+	 * @param importe
+	 * @return lista de repostajes normal que cumplen la condición de importe
+	 */
+	List<RepostajeGasolinera> listarRepostajeNormalImporte(double importe);
 
 }

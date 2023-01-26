@@ -25,4 +25,10 @@ public interface MenuService {
 	 * @return true si la inserción en base de datos ha sido correcta, false en caso contrario
 	 */
 	public boolean repostajeNormal(Calendar fch_actual, ConsultasService consultas);
+	
+	/**
+	 * listarRepostajeNormalMayorQueImporte: lista en consola los repostajes con mayor importe al indicado por usuario.
+	 * @param consultas
+	 */
+	public void listarRepostajeNormalMayorQueImporte(ConsultasService consultas);
 }

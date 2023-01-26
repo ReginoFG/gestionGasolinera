@@ -38,6 +38,13 @@
 				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect"/>
 			</bean>
 		</property>
+		<!-- Rehacer bd -->
+		<!--  <property name="jpaProperties">
+			<props>
+			<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+   			<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+   			</props>
+   		</property> -->
 	</bean>
 	
 	<!-- Gestor de transacciones -->

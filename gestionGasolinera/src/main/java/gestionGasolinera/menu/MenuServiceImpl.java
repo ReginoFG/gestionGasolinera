@@ -4,6 +4,7 @@
 package gestionGasolinera.menu;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,8 @@ public class MenuServiceImpl implements MenuService{
 		System.out.println("##### MENU ######");
 		System.out.println("#################");
 		System.out.println("1. Repostaje normal");
-		System.out.println("2. Repostaje factura");
+		System.out.println("2. Ejemplo consulta parametrizada");
+		//System.out.println("2. Repostaje factura");
 		System.out.println("3. Ver todos los repostajes");
 		System.out.println("4. Importe total combustible vendido");
 		System.out.println("5. Llenado de deposito");
@@ -65,10 +67,24 @@ public class MenuServiceImpl implements MenuService{
 		
 		//Inserción del DAO en base de datos
 		resultadoInsercionRepostajeNormal = consultas.insertarRepostajeNormal(repostajeGasolinera);
-		System.out.println("[INFO] - Resultado inserción nuevo repostaje normal: " + resultadoInsercionRepostajeNormal);
+		System.out.println("[INFO] - Resultado insercion nuevo repostaje normal: " + resultadoInsercionRepostajeNormal);
 		
 		return resultadoInsercionRepostajeNormal;
 		
+	}
+
+	@Override
+	public void listarRepostajeNormalMayorQueImporte(ConsultasService consultas) {
+		System.out.println("[INFO] - EJEMPLO CONSULTAS PARAMETRIZADAS");
+		Scanner entradaImporte = new Scanner(System.in);
+		double importe;
+		System.out.println("[INFO] - Escriba el importe minimo: ");
+        importe = entradaImporte.nextDouble();
+        System.out.println("[INFO] - Resultado con parámetros con nombre");
+        List<RepostajeGasolinera> listaRepostaje = consultas.listarRepostajeNormalImporte(importe);
+		for(RepostajeGasolinera rg: listaRepostaje) {
+			System.out.println(rg.toString());
+		}
 	}
 
 }

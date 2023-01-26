@@ -55,6 +55,7 @@ public class GestorMenu {
 					}
 					break;
 				case 2:
+					ms.listarRepostajeNormalMayorQueImporte(consulta);
 					break;
 				case 3:
 					break;

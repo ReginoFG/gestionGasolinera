@@ -3,8 +3,11 @@
  */
 package gestionGasolinera.dal;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -23,10 +26,20 @@ public class RepostajeGasolineraRepositorioImpl implements RepostajeGasolineraRe
 		
 		em.persist(repostajeGasolinera);
 		em.clear();
-		em.close();
+		//em.close();
 		
 	}
 	
-
+	public List<RepostajeGasolinera> buscarRepostajeNormalPorImporte(double importe) {
+		/*String jpql = "SELECT rg FROM RepostajeGasolinera rg WHERE rg.importeRespostajeGasolinera > :importeP";
+		Query query = em.createQuery(jpql);
+		query.setParameter("importeP", importe);
+		return query.getResultList();*/
+		
+	    String jpql = "SELECT rg FROM RepostajeGasolinera rg WHERE rg.importeRespostajeGasolinera > ?1";
+	    Query query = em.createQuery(jpql);
+	    query.setParameter(1, importe);
+	    return query.getResultList();
+	}
 
 }

@@ -41,10 +41,7 @@ public class RepostajeGasolinera {
 	
 	@Column(name="es_factura_rg")
 	private boolean esFacturaRepostajeGasolinera;
-	
-	@Column(name="ficticio", insertable=false)
-	private int ficticio;
-	
+		
 	//GETTERS SETTERS
 	public int getIdRepostajeGasolinera() {
 		return idRepostajeGasolinera;
