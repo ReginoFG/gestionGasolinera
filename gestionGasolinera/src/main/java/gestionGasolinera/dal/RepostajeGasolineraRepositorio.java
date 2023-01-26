@@ -23,4 +23,6 @@ public interface RepostajeGasolineraRepositorio {
 	 * @return lista de repostajes normal que cumplen la condición de importe
 	 */
 	public List<RepostajeGasolinera> buscarRepostajeNormalPorImporte(double importe);
+	
+	public void updatePorImporte();
 }

@@ -31,4 +31,6 @@ public interface MenuService {
 	 * @param consultas
 	 */
 	public void listarRepostajeNormalMayorQueImporte(ConsultasService consultas);
+	
+	public void updateRepostajeNormalImporte(ConsultasService consulta);
 }

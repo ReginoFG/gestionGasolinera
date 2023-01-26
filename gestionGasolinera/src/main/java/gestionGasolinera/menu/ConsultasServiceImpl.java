@@ -35,10 +35,16 @@ public class ConsultasServiceImpl implements ConsultasService{
 	}
 
 	@Override
-	@Transactional
 	public List<RepostajeGasolinera> listarRepostajeNormalImporte(double importe) {
 		List<RepostajeGasolinera> listaRepostaje = psi.buscarRepostajeNormalPorImporte(importe);
 		return listaRepostaje;
+	}
+
+	@Override
+	@Transactional
+	public void updateRepostajeNormalImporte() {
+		psi.updatePorImporte();
+		
 	}
 
 

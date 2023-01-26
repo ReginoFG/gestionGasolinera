@@ -24,5 +24,7 @@ public interface ConsultasService {
 	 * @return lista de repostajes normal que cumplen la condición de importe
 	 */
 	List<RepostajeGasolinera> listarRepostajeNormalImporte(double importe);
+	
+	public void updateRepostajeNormalImporte();
 
 }

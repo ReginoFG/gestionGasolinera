@@ -37,7 +37,8 @@ public class MenuServiceImpl implements MenuService{
 		System.out.println("1. Repostaje normal");
 		System.out.println("2. Ejemplo consulta parametrizada");
 		//System.out.println("2. Repostaje factura");
-		System.out.println("3. Ver todos los repostajes");
+		System.out.println("3. Ejemplo update o eliminado");
+		//System.out.println("3. Ver todos los repostajes");
 		System.out.println("4. Importe total combustible vendido");
 		System.out.println("5. Llenado de deposito");
 		System.out.println("6. Eliminar ultimo llenado de deposito");
@@ -73,6 +74,9 @@ public class MenuServiceImpl implements MenuService{
 		
 	}
 
+	// Los siguientes flujos lógicos son ejemplos, deberían estar bien comentados, estructurados y,
+	// con las excepciones y errores controlados cuando se trate de código real de una
+	// aplicación.
 	@Override
 	public void listarRepostajeNormalMayorQueImporte(ConsultasService consultas) {
 		System.out.println("[INFO] - EJEMPLO CONSULTAS PARAMETRIZADAS");
@@ -85,6 +89,12 @@ public class MenuServiceImpl implements MenuService{
 		for(RepostajeGasolinera rg: listaRepostaje) {
 			System.out.println(rg.toString());
 		}
+	}
+	
+	@Override
+	public void updateRepostajeNormalImporte(ConsultasService consulta) {
+		System.out.println("[INFO] - EJEMPLO UPDATE");
+		consulta.updateRepostajeNormalImporte();
 	}
 
 }
